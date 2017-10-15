@@ -62,16 +62,16 @@
             android:padding="8dp"/>
 
         <Button
-            android:id="@+id/retake_quiz"
+            android:id="@+id/go_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/pink"
-            android:text="@string/retake_quiz"
             android:layout_marginTop="@dimen/_16sdp"
             android:background="@drawable/button_selector"
+            android:padding="8dp"
+            android:text="@string/retake_quiz"
             android:textAllCaps="false"
-            android:textSize="@dimen/_16sdp"
-            android:padding="8dp"/>
+            android:textColor="@color/pink"
+            android:textSize="@dimen/_16sdp" />
 
         <Button
             android:id="@+id/btnBrowser"

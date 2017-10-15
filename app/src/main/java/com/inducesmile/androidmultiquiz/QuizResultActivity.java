@@ -1,7 +1,9 @@
 package com.inducesmile.androidmultiquiz;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +17,8 @@ import com.inducesmile.androidmultiquiz.database.DBHandler;
 import com.inducesmile.androidmultiquiz.entities.Client;
 
 import org.w3c.dom.Text;
+
+import static com.inducesmile.androidmultiquiz.R.string.register;
 
 public class QuizResultActivity extends AppCompatActivity {
 
@@ -57,13 +61,13 @@ public class QuizResultActivity extends AppCompatActivity {
             result.setText("There has been a mistake");
         }
 
-        Button retakeQuizButton = (Button)findViewById(R.id.retake_quiz);
-        assert retakeQuizButton != null;
-        retakeQuizButton.setOnClickListener(new View.OnClickListener() {
+        Button quiz_home = (Button)findViewById(R.id.go_home);
+        assert quiz_home != null;
+        quiz_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent retakeQuizIntent = new Intent(QuizResultActivity.this, QuizCategoryActivity.class);
-                startActivity(retakeQuizIntent);
+                Intent instructionIntent = new Intent(QuizResultActivity.this, QuizCategoryActivity.class);
+                startActivity(instructionIntent);
             }
         });
 
@@ -78,14 +82,10 @@ public class QuizResultActivity extends AppCompatActivity {
             }
         });
 
-
-        dbh = new DBHandler(RegisterActivity.this);
-        client = new Client(userScore, );
+       // client.setScore(resultString);
 
 
     };
-
-
 
     @Override
     public void onBackPressed() {

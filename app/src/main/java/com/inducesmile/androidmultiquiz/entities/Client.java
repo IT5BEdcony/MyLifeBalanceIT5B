@@ -8,12 +8,14 @@ public class Client {
     private int id;
     private String name;
     private String email;
+    private String score;
 
     public Client() {}
 
-    public Client(String name, String email) {
+    public Client(String name, String email, String score) {
         this.name = name;
         this.email = email;
+        this.score = score;
     }
 
     public int getId() { return id; }
@@ -26,11 +28,11 @@ public class Client {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
-    }
+    public String getEmail() {return email;}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    public void setEmail(String email) {this.email = email;}
+
+    public String getScore() {return score;}
+
+    public void setScore(String userScore) {this.score = userScore;}
 }

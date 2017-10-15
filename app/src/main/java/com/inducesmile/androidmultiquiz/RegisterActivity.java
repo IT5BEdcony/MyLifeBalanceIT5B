@@ -56,10 +56,11 @@ public class RegisterActivity extends AppCompatActivity {
                     if (name.matches("") || email.matches("")) {
                         Toast.makeText(RegisterActivity.this, "You must enter both fields.", Toast.LENGTH_LONG).show();
                     } else {
-                        client = new Client(name, email);
+                        client = new Client(name, email, "0");
                         dbh.addClient(client);
                         sharedPreference.setSessionState(true);
                         Intent quizMenuIntent = new Intent(RegisterActivity.this, QuizMenuActivity.class);
+                        quizMenuIntent.putExtra("name", email);
                         startActivity(quizMenuIntent);
                     }
                 } else {
