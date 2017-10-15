@@ -12,6 +12,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.text.Html;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.inducesmile.androidmultiquiz.database.DBHandler;
 import com.inducesmile.androidmultiquiz.entities.Client;
@@ -26,10 +27,12 @@ public class QuizMenuActivity extends AppCompatActivity {
     private Button signIn;
     private Button viewUsers;
     private Button logout;
+    String email;
     private MySharedPreference sharedPreference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        email = getIntent().getStringExtra("name");
 //        requestWindowFeature(Window.FEATURE_NO_TITLE);
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
@@ -63,7 +66,7 @@ public class QuizMenuActivity extends AppCompatActivity {
         Button btnBrowse = (Button) findViewById(R.id.btnBrowser);
         btnBrowse.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Uri webpage = Uri.parse("http://eagles.ic1d.net.au/");
+                Uri webpage = Uri.parse("https://www.rmit.edu.au/");
                 Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
                 if (intent.resolveActivity(getPackageManager()) != null) {
                     startActivity(intent);
@@ -78,12 +81,20 @@ public class QuizMenuActivity extends AppCompatActivity {
 
         //Hide sign in and register if logged in
         sharedPreference = new MySharedPreference(QuizMenuActivity.this);
-        if(sharedPreference.isLoggedIn()) {
+        if(email.equals("admin@site.com")) {
             register.setVisibility(View.GONE);
             signIn.setVisibility(View.GONE);
+            Toast.makeText(QuizMenuActivity.this, "admin logged in", Toast.LENGTH_LONG).show();
         } else {
-            viewUsers.setVisibility(View.GONE);
-            logout.setVisibility(View.GONE);
+            if (sharedPreference.isLoggedIn()) {
+                register.setVisibility(View.GONE);
+                signIn.setVisibility(View.GONE);
+                viewUsers.setVisibility(View.GONE);
+
+            } else {
+                viewUsers.setVisibility(View.GONE);
+                logout.setVisibility(View.GONE);
+            }
         }
 
         assert register != null;

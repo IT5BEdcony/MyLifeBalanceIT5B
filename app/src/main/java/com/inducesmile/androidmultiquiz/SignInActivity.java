@@ -1,6 +1,7 @@
 package com.inducesmile.androidmultiquiz;
 
 import android.content.Intent;
+import android.renderscript.Script;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,13 +16,16 @@ import com.inducesmile.androidmultiquiz.database.DBHandler;
 import com.inducesmile.androidmultiquiz.entities.Client;
 import com.inducesmile.androidmultiquiz.helper.MySharedPreference;
 
-public class SignInActivity extends AppCompatActivity {
+import static com.inducesmile.androidmultiquiz.R.string.register;
+
+public class SignInActivity extends AppCompatActivity  {
 
     private DBHandler dbh;
     private MySharedPreference sharedPreference;
     private Client client;
     private AutoCompleteTextView emailTV;
     private String email;
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,26 +39,28 @@ public class SignInActivity extends AppCompatActivity {
         sharedPreference = new MySharedPreference(SignInActivity.this);
 
 
-        Button signIn = (Button) findViewById(R.id.email_sign_in_button);
+        Button signIn = (Button) findViewById(R.id.email_sign_in_button);  // finds when the sign in button is pressed
         emailTV = (AutoCompleteTextView) findViewById(R.id.email);
         assert signIn != null;
         signIn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 email = emailTV.getText().toString();
-                if(email.matches("")){
-                    Toast.makeText(SignInActivity.this, "Please enter an email.", Toast.LENGTH_LONG).show();
+                if (email.matches(emailPattern)) {
+                    if (email.matches("")) {
+                        Toast.makeText(SignInActivity.this, "Please enter an email.", Toast.LENGTH_LONG).show();
 
+                    } else if (dbh.checkClient(email)) {
+                        sharedPreference.setSessionState(true);
+                        Intent quizMenuIntent = new Intent(SignInActivity.this, QuizMenuActivity.class);
+                        quizMenuIntent.putExtra("name", email);
+                        startActivity(quizMenuIntent);
+                    } else {
+                        Toast.makeText(SignInActivity.this, "Email not Registered", Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    Toast.makeText(SignInActivity.this, "Email is Invalid", Toast.LENGTH_LONG).show();
                 }
-                else if(dbh.checkClient(email)) {
-                    sharedPreference.setSessionState(true);
-                    Intent quizMenuIntent = new Intent(SignInActivity.this, QuizMenuActivity.class);
-                    startActivity(quizMenuIntent);
-                }
-                else {
-                    Toast.makeText(SignInActivity.this, "Email not Registered.", Toast.LENGTH_LONG).show();
-                }
-
             }
         });
 
@@ -69,3 +75,4 @@ public class SignInActivity extends AppCompatActivity {
         });
     }
 }
+

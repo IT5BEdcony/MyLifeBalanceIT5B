@@ -27,6 +27,7 @@ public class RegisterActivity extends AppCompatActivity {
     private MySharedPreference sharedPreference;
     private DBHandler dbh;
     private Client client;
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,18 +48,22 @@ public class RegisterActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                nameET = (EditText) findViewById(R.id.name);
-                emailET = (EditText) findViewById(R.id.email);
-                name = nameET.getText().toString();
-                email = emailET.getText().toString();
-                if(name.matches("") || email.matches("")) {
-                    Toast.makeText(RegisterActivity.this, "You must enter both fields.", Toast.LENGTH_LONG).show();
+                    nameET = (EditText) findViewById(R.id.name);
+                    emailET = (EditText) findViewById(R.id.email);
+                    name = nameET.getText().toString();
+                    email = emailET.getText().toString();
+                    if (email.matches(emailPattern)) {
+                    if (name.matches("") || email.matches("")) {
+                        Toast.makeText(RegisterActivity.this, "You must enter both fields.", Toast.LENGTH_LONG).show();
+                    } else {
+                        client = new Client(name, email);
+                        dbh.addClient(client);
+                        sharedPreference.setSessionState(true);
+                        Intent quizMenuIntent = new Intent(RegisterActivity.this, QuizMenuActivity.class);
+                        startActivity(quizMenuIntent);
+                    }
                 } else {
-                    client = new Client(name, email);
-                    dbh.addClient(client);
-                    sharedPreference.setSessionState(true);
-                    Intent quizMenuIntent = new Intent(RegisterActivity.this, QuizMenuActivity.class);
-                    startActivity(quizMenuIntent);
+                    Toast.makeText(RegisterActivity.this, "Email is Invalid", Toast.LENGTH_LONG).show();
                 }
             }
         });

@@ -11,10 +11,15 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.github.pavlospt.CircleView;
+import com.inducesmile.androidmultiquiz.database.DBHandler;
+import com.inducesmile.androidmultiquiz.entities.Client;
 
 import org.w3c.dom.Text;
 
 public class QuizResultActivity extends AppCompatActivity {
+
+    private DBHandler dbh;
+    private Client client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +78,14 @@ public class QuizResultActivity extends AppCompatActivity {
             }
         });
 
-    }
+
+        dbh = new DBHandler(RegisterActivity.this);
+        client = new Client(userScore, );
+
+
+    };
+
+
 
     @Override
     public void onBackPressed() {

@@ -21,7 +21,8 @@
             android:id="@+id/register_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:weightSum="1">
 
             <EditText
                 android:id="@+id/name"
@@ -93,7 +94,8 @@
                 android:text="@string/cont_guest"
                 android:textAllCaps="false"
                 android:textColor="@color/pink"
-                android:textSize="@dimen/_16sdp" />
+                android:textSize="@dimen/_16sdp"
+                android:layout_weight="0.37" />
 
         </LinearLayout>
     </ScrollView>
