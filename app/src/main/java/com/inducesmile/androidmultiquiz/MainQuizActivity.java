@@ -56,7 +56,7 @@ public class MainQuizActivity extends AppCompatActivity {
 
     private ProgressBar progressBar;
 
-    private int barStatus = 0;
+    private int barStatus;
 
 
 
@@ -106,6 +106,7 @@ public class MainQuizActivity extends AppCompatActivity {
             allQuestions = quizObject.get(questionCount);
             displayQuizQuestions();
 
+            barStatus = 1;
             //Next button
             assert nextQuestionButton != null;
             nextQuestionButton.setOnClickListener(new View.OnClickListener() {
