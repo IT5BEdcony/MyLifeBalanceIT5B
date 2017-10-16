@@ -68,7 +68,19 @@
             android:layout_marginTop="@dimen/_16sdp"
             android:background="@drawable/button_selector"
             android:padding="8dp"
-            android:text="@string/retake_quiz"
+            android:text="Go Home"
+            android:textAllCaps="false"
+            android:textColor="@color/pink"
+            android:textSize="@dimen/_16sdp" />
+
+        <Button
+            android:id="@+id/newQuiz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/button_selector"
+            android:padding="8dp"
+            android:text="Take new quiz"
             android:textAllCaps="false"
             android:textColor="@color/pink"
             android:textSize="@dimen/_16sdp" />

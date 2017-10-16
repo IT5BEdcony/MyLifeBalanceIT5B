@@ -24,13 +24,11 @@ public class DBHandler extends SQLiteOpenHelper {
     public static final String COLUMN_CLIENT_ID = "client_id";
     public static final String COLUMN_CLIENT_NAME = "client_name";
     public static final String COLUMN_CLIENT_EMAIL = "client_email";
-    public static final String COLUMN_CLIENT_SCORE = "client_score";
 
     private String CREATE_CLIENT_TABLE = "CREATE TABLE " + TABLE_CLIENTS + "("
             + COLUMN_CLIENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + COLUMN_CLIENT_NAME + " TEXT,"
-            + COLUMN_CLIENT_EMAIL + " TEXT,"
-            + COLUMN_CLIENT_SCORE + " TEXT" + ")";
+            + COLUMN_CLIENT_EMAIL + " TEXT" + ")";
 
 
     public DBHandler(Context context) {
@@ -54,7 +52,6 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(COLUMN_CLIENT_NAME, client.getName());
         //Assign email to object taken from passed Client object
         values.put(COLUMN_CLIENT_EMAIL, client.getEmail());
-        values.put(COLUMN_CLIENT_SCORE, client.getScore());
         //Create DB object and assign current object to it
         SQLiteDatabase db = this.getWritableDatabase();
         db.insert(TABLE_CLIENTS, null, values);
@@ -66,12 +63,11 @@ public class DBHandler extends SQLiteOpenHelper {
         String[] columns = {
                 COLUMN_CLIENT_ID,
                 COLUMN_CLIENT_NAME,
-                COLUMN_CLIENT_EMAIL,
-                COLUMN_CLIENT_SCORE
+                COLUMN_CLIENT_EMAIL
         };
         // sorting orders
-    //    String sortOrder =
-    //            COLUMN_USER_NAME + " ASC";
+        //    String sortOrder =
+        //            COLUMN_USER_NAME + " ASC";
         List<Client> clientList = new ArrayList<Client>();
 
         SQLiteDatabase db = this.getReadableDatabase();
@@ -92,23 +88,22 @@ public class DBHandler extends SQLiteOpenHelper {
 
 
         // Traversing through all rows and adding to list
-            if (cursor.moveToFirst()) {
+        if (cursor.moveToFirst()) {
             do {
                 Client client = new Client();
                 client.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_CLIENT_ID))));
                 client.setName(cursor.getString(cursor.getColumnIndex(COLUMN_CLIENT_NAME)));
                 client.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_CLIENT_EMAIL)));
-                client.setScore(cursor.getString(cursor.getColumnIndex(COLUMN_CLIENT_SCORE)));
-    //            client.setPassword(cursor.getString(cursor.getColumnIndex(COLUMN_USER_PASSWORD)));
+                //            client.setPassword(cursor.getString(cursor.getColumnIndex(COLUMN_USER_PASSWORD)));
                 // Adding user record to list
                 clientList.add(client);
             } while (cursor.moveToNext());
         }
-            cursor.close();
-            db.close();
+        cursor.close();
+        db.close();
 
         // return user list
-            return clientList;
+        return clientList;
     }
 
     public boolean checkClient(String email) {

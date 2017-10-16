@@ -69,13 +69,25 @@ public class QuizResultActivity extends AppCompatActivity {
         cv.put("Score",StringScore); //These Fields should be your String values of actual column names
        //DBHandler.COLUMN_CLIENT_SCORE(StringScore);
 
-        Button quiz_home = (Button)findViewById(R.id.go_home);
+
+        Button quiz_home = (Button)findViewById(R.id.newQuiz);
         assert quiz_home != null;
         quiz_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent instructionIntent = new Intent(QuizResultActivity.this, QuizCategoryActivity.class);
                 startActivity(instructionIntent);
+            }
+        });
+
+        final Button quizMenuIntent = (Button)findViewById(R.id.go_home);
+        assert quizMenuIntent != null;
+        quizMenuIntent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent quizMenuIntent = new Intent(QuizResultActivity.this, QuizMenuActivity.class);
+                quizMenuIntent.putExtra("name", "null@null.com");
+                startActivity(quizMenuIntent);
             }
         });
 
@@ -89,11 +101,5 @@ public class QuizResultActivity extends AppCompatActivity {
                 startActivity(resultIntent);
             }
         });
-
-
-
-
     };
-
-
 }
