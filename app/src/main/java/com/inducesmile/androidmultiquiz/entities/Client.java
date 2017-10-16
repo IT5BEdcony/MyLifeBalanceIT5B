@@ -34,5 +34,5 @@ public class Client {
 
     public String getScore() {return score;}
 
-    public void setScore(String userScore) {this.score = userScore;}
+    public void setScore(String score) {this.score = score;}
 }

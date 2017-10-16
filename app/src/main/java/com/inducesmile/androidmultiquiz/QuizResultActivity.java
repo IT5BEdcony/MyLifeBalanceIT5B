@@ -31,6 +31,8 @@ public class QuizResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_result);
 
+        dbh = new DBHandler(QuizResultActivity.this);
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(Html.fromHtml("<font color='#e1c8d6'>Quiz Results</font>"));
         //setTitle(getString(R.string.quiz_result));
@@ -60,6 +62,10 @@ public class QuizResultActivity extends AppCompatActivity {
         } else {TextView result = (TextView) findViewById(R.id.resultText);
             result.setText("There has been a mistake");
         }
+        String StringScore = Double.toString(passResult);
+       // client.setScore(StringScore);
+        client = new Client("name", "email", StringScore);
+        dbh.addClient(client);
 
         Button quiz_home = (Button)findViewById(R.id.go_home);
         assert quiz_home != null;
@@ -82,12 +88,10 @@ public class QuizResultActivity extends AppCompatActivity {
             }
         });
 
-       // client.setScore(resultString);
+
 
 
     };
 
-    @Override
-    public void onBackPressed() {
-    }
+
 }

@@ -14,22 +14,23 @@
         android:id="@+id/quiz_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:contentDescription="@string/app_name"
         android:src="@drawable/quizlogo"
         android:padding="@dimen/_6sdp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginTop="51dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/quiz_logo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/_2sdp"
         android:text="@string/quiz_slogan"
         android:textColor="@color/colorPrimaryText"
         android:textSize="24sp"
-        android:textStyle="italic" />
+        android:textStyle="italic"
+        android:layout_below="@+id/quiz_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp" />
 
 
 </RelativeLayout>
