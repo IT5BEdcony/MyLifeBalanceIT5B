@@ -75,6 +75,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent quizMenuIntent = new Intent(RegisterActivity.this, QuizMenuActivity.class);
+                quizMenuIntent.putExtra("name", "null@null.com");
                 startActivity(quizMenuIntent);
             }
         });

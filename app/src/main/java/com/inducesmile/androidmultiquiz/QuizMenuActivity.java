@@ -31,8 +31,8 @@ public class QuizMenuActivity extends AppCompatActivity {
     private MySharedPreference sharedPreference;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        email = getIntent().getStringExtra("name");
+        protected void onCreate(Bundle savedInstanceState) {
+        email = getIntent().getStringExtra("name");     // Receive email variable from previous screen.
 //        requestWindowFeature(Window.FEATURE_NO_TITLE);
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
@@ -87,9 +87,14 @@ public class QuizMenuActivity extends AppCompatActivity {
             Toast.makeText(QuizMenuActivity.this, "admin logged in", Toast.LENGTH_LONG).show();
         } else {
             if (sharedPreference.isLoggedIn()) {
-                register.setVisibility(View.GONE);
-                signIn.setVisibility(View.GONE);
-                viewUsers.setVisibility(View.GONE);
+                if(email.equals("null@null.com")) {
+                    viewUsers.setVisibility(View.GONE);
+                    logout.setVisibility(View.GONE);
+                }else {
+                    register.setVisibility(View.GONE);
+                    signIn.setVisibility(View.GONE);
+                    viewUsers.setVisibility(View.GONE);
+                }
 
             } else {
                 viewUsers.setVisibility(View.GONE);
