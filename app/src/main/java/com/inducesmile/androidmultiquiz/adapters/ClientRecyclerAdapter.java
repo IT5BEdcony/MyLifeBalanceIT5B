@@ -36,7 +36,7 @@ public class ClientRecyclerAdapter extends RecyclerView.Adapter<ClientRecyclerAd
     public void onBindViewHolder(ClientViewHolder holder, int position) {
         holder.textViewName.setText(listClients.get(position).getName());
         holder.textViewEmail.setText(listClients.get(position).getEmail());
-
+        holder.textViewScore.setText(listClients.get(position).getScore());
     }
 
     @Override
@@ -53,12 +53,13 @@ public class ClientRecyclerAdapter extends RecyclerView.Adapter<ClientRecyclerAd
 
         public AppCompatTextView textViewName;
         public AppCompatTextView textViewEmail;
+        public AppCompatTextView textViewScore;
 
         public ClientViewHolder(View view) {
             super(view);
             textViewName = (AppCompatTextView) view.findViewById(R.id.textViewName);
             textViewEmail = (AppCompatTextView) view.findViewById(R.id.textViewEmail);
-
+            textViewScore = (AppCompatTextView) view.findViewById(R.id.textViewScore);
         }
     }
 
