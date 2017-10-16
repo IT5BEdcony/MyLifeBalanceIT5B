@@ -1,73 +1,73 @@
 <resources>
     <string name="app_name">My Life Balance</string>
-    <string name="quiz_slogan">Enhancing your life</string>
-    <string name="select_quiz">Select a Quiz</string>
-    <string name="quiz_instruction">Quiz Instructions</string>
-    <string name="your_best_score">Your Best Score</string>
-    <string name="quiz_user_score_table">QUIZ TOP SCORERS</string>
-    <string name="total_best_score">93%</string>
-    <string name="quiz_category">Quiz Categories</string>
-    <string name="sports">Sport Category</string>
-    <string name="question_title">Question</string>
-    <string name="question">What is the highest mountain in the world right now?</string>
-    <string name="everest">Mount Everest</string>
-    <string name="next_button">Next Question</string>
-    <string name="prev_button">PREV QUESTION</string>
-    <string name="pass"></string>
-    <string name="fail">FAIL</string>
-    <string name="quiz_result">Quiz Result</string>
-    <string name="retake_quiz">Quiz Home</string>
-    <string name="view_result">Check Answer</string>
-    <string name="question_num">Question 12</string>
-    <string name="your_answer">Your answer</string>
-    <string name="correct_answer">Correct answer</string>
-    <string name="quiz_result_analysis">Quiz Result Analysis</string>
-    <string name="no_quiz_in_category">There is no quiz in this category. Add a new quiz</string>
-    <string name="home_button">Quiz Home</string>
-    <string name="register">Register</string>
-    <string name="sign_in">Sign In</string>
-    <string name="email">Email</string>
-    <string name="email_hint">some@one.com</string>
-    <string name="password">Password</string>
-    <string name="title_activity_login">Sign in</string>
+    <string name="quiz_slogan" translatable="false">Enhancing your life</string>
+    <string name="select_quiz" translatable="false">Select a Quiz</string>
+    <string name="quiz_instruction" translatable="false">Quiz Instructions</string>
+    <string name="your_best_score" translatable="false">Your Best Score</string>
+    <string name="quiz_user_score_table" translatable="false">QUIZ TOP SCORERS</string>
+    <string name="total_best_score" translatable="false">93%</string>
+    <string name="quiz_category" translatable="false">Quiz Categories</string>
+    <string name="sports" translatable="false">Sport Category</string>
+    <string name="question_title" translatable="false">Question</string>
+    <string name="question" translatable="false">What is the highest mountain in the world right now?</string>
+    <string name="everest" translatable="false">Mount Everest</string>
+    <string name="next_button" translatable="false">Next Question</string>
+    <string name="prev_button" translatable="false">PREV QUESTION</string>
+    <string name="pass" translatable="false"></string>
+    <string name="fail" translatable="false">FAIL</string>
+    <string name="quiz_result" translatable="false">Quiz Result</string>
+    <string name="retake_quiz" translatable="false">Quiz Home</string>
+    <string name="view_result" translatable="false">Check Answer</string>
+    <string name="question_num" translatable="false">Question 12</string>
+    <string name="your_answer" translatable="false">Your answer</string>
+    <string name="correct_answer" translatable="false">Correct answer</string>
+    <string name="quiz_result_analysis" translatable="false">Quiz Result Analysis</string>
+    <string name="no_quiz_in_category" translatable="false">There is no quiz in this category. Add a new quiz</string>
+    <string name="home_button" translatable="false">Quiz Home</string>
+    <string name="register" translatable="false">Register</string>
+    <string name="sign_in" translatable="false">Sign In</string>
+    <string name="email" translatable="false">Email</string>
+    <string name="email_hint" translatable="false">some@one.com</string>
+    <string name="password" translatable="false">Password</string>
+    <string name="title_activity_login" translatable="false">Sign in</string>
 
     <!-- Text responses -->
-    <string name="less_than_25">Life causes you immense pain. You feel confused most of the time. You have few friends and the people
+    <string name="less_than_25" translatable="false">Life causes you immense pain. You feel confused most of the time. You have few friends and the people
         you do associate with, likely share the same views of the world as you. Your focus is primarily on what you cannot control or
         influence and thus you are left feeling constantly overwhelmed and out of control. You view life as a disappointment so far
         and you allow the forces outside of yourself to dominate you. This is what we refer to as Level 3 living.</string>
-    <string name="less_than_50">You often find life confusing. You feel out of control and ask yourself ‘why me? “The world is scary
+    <string name="less_than_50" translatable="false">You often find life confusing. You feel out of control and ask yourself ‘why me? “The world is scary
         to you and you most likely blame others for your poor results. You tend to not take risks and stay in your comfort zone.
         Change is difficult for you, you would like to live your life on a level 2 and have more control, but you tend to be in the
         level 3 zone and that frustrates you.</string>
-    <string name="less_than_75">You have mixed results in your life and wonder if it is luck. You sometimes wonder what you are doing
+    <string name="less_than_75" translatable="false">You have mixed results in your life and wonder if it is luck. You sometimes wonder what you are doing
         wrong and how you can turn things around. You can be disappointed by people and events in the world. You are willing to take
         some risks to change as long as you can see the benefits. You operate at level 2 but when things get confusing or frustrating
         you digress to level 3.</string>
-    <string name="less_than_100">You have the belief that your reality is up to you. You hold yourself accountable for your world.
+    <string name="less_than_100" translatable="false">You have the belief that your reality is up to you. You hold yourself accountable for your world.
         You are willing to learn new ways of doing things and regard challenges as learning opportunities. You enjoy life and what it presents.
         You take yourself lightly, you live at level 1 most of the time and you are aware of when you are choosing not to.</string>
 
     <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign In or Register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
+    <string name="prompt_email" translatable="false">Email</string>
+    <string name="prompt_password" translatable="false">Password</string>
+    <string name="action_sign_in" translatable="false">Sign In or Register</string>
+    <string name="action_sign_in_short" translatable="false">Sign in</string>
+    <string name="error_invalid_email" translatable="false">This email address is invalid</string>
+    <string name="error_invalid_password" translatable="false">This password is too short</string>
+    <string name="error_incorrect_password" translatable="false">This password is incorrect</string>
+    <string name="error_field_required" translatable="false">This field is required</string>
+    <string name="permission_rationale" translatable="false">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="cont_guest">Continue as Guest</string>
-    <string name="prompt_name">Full Name</string>
-    <string name="welcome">Welcome!</string>
-    <string name="name_hint">Full Name</string>
-    <string name="website">Visit Website</string>
-    <string name="view_users">View Users</string>
-    <string name="logout">Log Out</string>
-    <string name="hint_password">Password</string>
-    <string name="hint_email">Email</string>
-    <string name="hint_name">Name</string>
+    <string name="cont_guest" translatable="false">Continue as Guest</string>
+    <string name="prompt_name" translatable="false">Full Name</string>
+    <string name="welcome" translatable="false">Welcome!</string>
+    <string name="name_hint" translatable="false">Full Name</string>
+    <string name="website" translatable="false">Visit Website</string>
+    <string name="view_users" translatable="false">View Users</string>
+    <string name="logout" translatable="false">Log Out</string>
+    <string name="hint_password" translatable="false">Password</string>
+    <string name="hint_email" translatable="false">Email</string>
+    <string name="hint_name" translatable="false">Name</string>
 </resources>
