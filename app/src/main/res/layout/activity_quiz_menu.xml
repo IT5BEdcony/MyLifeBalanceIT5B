@@ -12,99 +12,159 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.4">
+        android:layout_weight="0.05">
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="167dp"
-            android:layout_gravity="fill"
-            app:srcCompat="@drawable/balance"
-            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-    </RelativeLayout>
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="fill"
+            app:srcCompat="@drawable/balance" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="vertical"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin">
-
-        <TextView
-            android:id="@+id/textView"
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/welcome"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimary"
-            android:textSize="24sp" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/imageView"
+            android:layout_gravity="center"
+            android:layout_marginTop="121dp"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin">
 
-        <Button
-            android:id="@+id/start_quiz_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/button_selector"
-            android:letterSpacing="0.1"
-            android:padding="8dp"
-            android:text="@string/select_quiz"
-            android:textAllCaps="false"
-            android:textColor="@color/pink"
-            android:textSize="@dimen/_16sdp" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24sp" />
 
-        <Button
-            android:id="@+id/quiz_instruction_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/button_selector"
-            android:letterSpacing="0.1"
-            android:padding="8dp"
-            android:text="@string/quiz_instruction"
-            android:textAllCaps="false"
-            android:textColor="@color/pink"
-            android:textSize="@dimen/_16sdp" />
+            <Button
+                android:id="@+id/start_quiz_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/button_selector"
+                android:letterSpacing="0.1"
+                android:padding="8dp"
+                android:text="@string/select_quiz"
+                android:textAllCaps="false"
+                android:textColor="@color/pink"
+                android:textSize="@dimen/_16sdp" />
 
-        <Button
-            android:id="@+id/btnBrowser"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/button_selector"
-            android:letterSpacing="0.1"
-            android:padding="8dp"
-            android:text="@string/website"
-            android:textAllCaps="false"
-            android:textColor="@color/pink"
-            android:textSize="@dimen/_16sdp" />
+            <Button
+                android:id="@+id/quiz_instruction_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/button_selector"
+                android:letterSpacing="0.1"
+                android:padding="8dp"
+                android:text="@string/quiz_instruction"
+                android:textAllCaps="false"
+                android:textColor="@color/pink"
+                android:textSize="@dimen/_16sdp" />
+
+            <Button
+                android:id="@+id/btnBrowser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/button_selector"
+                android:letterSpacing="0.1"
+                android:padding="8dp"
+                android:text="@string/website"
+                android:textAllCaps="false"
+                android:textColor="@color/pink"
+                android:textSize="@dimen/_16sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/sign_in_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_selector"
+                    android:letterSpacing="0.1"
+                    android:padding="8dp"
+                    android:text="@string/sign_in"
+                    android:textAllCaps="false"
+                    android:textColor="@color/pink"
+                    android:textSize="@dimen/_16sdp" />
+
+                <Button
+                    android:id="@+id/register_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_selector"
+                    android:letterSpacing="0.1"
+                    android:padding="8dp"
+                    android:text="@string/register"
+                    android:textAllCaps="false"
+                    android:textColor="@color/pink"
+                    android:textSize="@dimen/_16sdp" />
+
+                <Button
+                    android:id="@+id/viewUsers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_selector"
+                    android:letterSpacing="0.1"
+                    android:padding="8dp"
+                    android:text="@string/view_users"
+                    android:textAllCaps="false"
+                    android:textColor="@color/pink"
+                    android:textSize="@dimen/_16sdp" />
+
+                <Button
+                    android:id="@+id/logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_selector"
+                    android:letterSpacing="0.1"
+                    android:padding="8dp"
+                    android:text="@string/logout"
+                    android:textAllCaps="false"
+                    android:textColor="@color/pink"
+                    android:textSize="@dimen/_16sdp" />
+            </LinearLayout>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/linearLayout"
+            android:layout_marginTop="21dp">
 
             <Button
-                android:id="@+id/sign_in_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="4dp"
-                android:layout_marginTop="24dp"
-                android:layout_weight="1"
-                android:background="@drawable/button_selector"
-                android:letterSpacing="0.1"
-                android:padding="8dp"
-                android:text="@string/sign_in"
-                android:textAllCaps="false"
-                android:textColor="@color/pink"
-                android:textSize="@dimen/_16sdp" />
-
-            <Button
-                android:id="@+id/register_button"
+                android:id="@+id/facebook"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
@@ -113,13 +173,13 @@
                 android:background="@drawable/button_selector"
                 android:letterSpacing="0.1"
                 android:padding="8dp"
-                android:text="@string/register"
+                android:text="facebook"
                 android:textAllCaps="false"
                 android:textColor="@color/pink"
                 android:textSize="@dimen/_16sdp" />
 
             <Button
-                android:id="@+id/viewUsers"
+                android:id="@+id/twitter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
@@ -128,13 +188,13 @@
                 android:background="@drawable/button_selector"
                 android:letterSpacing="0.1"
                 android:padding="8dp"
-                android:text="@string/view_users"
+                android:text="twitter"
                 android:textAllCaps="false"
                 android:textColor="@color/pink"
                 android:textSize="@dimen/_16sdp" />
 
             <Button
-                android:id="@+id/logout"
+                android:id="@+id/linkedin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
@@ -143,12 +203,13 @@
                 android:background="@drawable/button_selector"
                 android:letterSpacing="0.1"
                 android:padding="8dp"
-                android:text="@string/logout"
+                android:text="Linkedin"
                 android:textAllCaps="false"
                 android:textColor="@color/pink"
                 android:textSize="@dimen/_16sdp" />
+
+
         </LinearLayout>
-
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>

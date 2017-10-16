@@ -140,5 +140,38 @@ public class QuizMenuActivity extends AppCompatActivity {
 
             }
         });
+
+        Button btnTwitter = (Button) findViewById(R.id.twitter);
+        btnTwitter.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Uri webpage = Uri.parse("https://www.twitter.com/");
+                Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
+
+        Button btnFacebook = (Button) findViewById(R.id.facebook);
+        btnFacebook.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Uri webpage = Uri.parse("https://www.facebook.com/");
+                Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
+
+        Button btnLinkedin = (Button) findViewById(R.id.linkedin);
+        btnLinkedin.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Uri webpage = Uri.parse("https://www.linkedin.com/");
+                Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
     }
 }
