@@ -106,7 +106,6 @@ public class MainQuizActivity extends AppCompatActivity {
             allQuestions = quizObject.get(questionCount);
             displayQuizQuestions();
 
-
             //Next button
             assert nextQuestionButton != null;
             nextQuestionButton.setOnClickListener(new View.OnClickListener() {
@@ -115,12 +114,10 @@ public class MainQuizActivity extends AppCompatActivity {
                     int radioButtonId = radioGroup.getCheckedRadioButtonId();
                     String userSelectedAnswer = selectedAnswerOption(radioButtonId);
 
-                    if(barStatus < 100){
-                        barStatus += 5;}
-
                     if(userSelectedAnswer.equals("")){
                         Toast.makeText(MainQuizActivity.this, "You must select an answer " + userSelectedAnswer, Toast.LENGTH_LONG).show();
-                    }else{
+                    }
+                    else{
                         //check for the correct answer
                       //  Log.d(TAG, "Match answers " + allQuestions.getAnswer() + " select " + userSelectedAnswer);
                       //  if(allQuestions.getAnswer().trim().equals(userSelectedAnswer.trim())){ //wont need a lot of this
@@ -130,18 +127,23 @@ public class MainQuizActivity extends AppCompatActivity {
                                 switch(id){
                                     case R.id.answer_one:
                                         mScore.setScore(1);
+                                        barStatus = barStatus++;
                                         break;
                                     case R.id.answer_two:
                                         mScore.setScore(2);
+                                        barStatus = barStatus++;
                                         break;
                                     case R.id.answer_three:
                                         mScore.setScore(3);
+                                        barStatus = barStatus++;
                                         break;
                                     case R.id.answer_four:
                                         mScore.setScore(4);
+                                        barStatus = barStatus++;
                                         break;
                                     case R.id.answer_five:
                                         mScore.setScore(5);
+                                        barStatus = barStatus++;
                                         break;
 
                                 }
@@ -190,11 +192,9 @@ public class MainQuizActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     int radioButtonId = radioGroup.getCheckedRadioButtonId();
                     String userSelectedAnswer = selectedAnswerOption(radioButtonId);
-                    if(barStatus > 0){
-                        barStatus -= 5;}
 
                     if (questionCount<=0){
-                        Toast.makeText(MainQuizActivity.this, "There is no prev question " , Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainQuizActivity.this, "There is no prev question!" , Toast.LENGTH_LONG).show();
                     }else{
                         //check for the correct answer
                         //  Log.d(TAG, "Match answers " + allQuestions.getAnswer() + " select " + userSelectedAnswer);
