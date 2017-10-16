@@ -194,7 +194,7 @@ public class MainQuizActivity extends AppCompatActivity {
                         barStatus -= 5;}
 
                     if (questionCount<=0){
-                        Toast.makeText(MainQuizActivity.this, "There is no Prev question " , Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainQuizActivity.this, "There is no prev question " , Toast.LENGTH_LONG).show();
                     }else{
                         //check for the correct answer
                         //  Log.d(TAG, "Match answers " + allQuestions.getAnswer() + " select " + userSelectedAnswer);
