@@ -123,27 +123,24 @@ public class MainQuizActivity extends AppCompatActivity {
                       //  if(allQuestions.getAnswer().trim().equals(userSelectedAnswer.trim())){ //wont need a lot of this
                             //set new score
                       //      mScore.setScore(1); //radiobutton 1 with be worth 1, radiobutton 2 will be worth 2 and so on
-                            int id=radioGroup.getCheckedRadioButtonId();
+                        progressBar.setProgress(barStatus);
+                                barStatus= barStatus + 1;
+                        int id=radioGroup.getCheckedRadioButtonId();
                                 switch(id){
                                     case R.id.answer_one:
                                         mScore.setScore(1);
-                                        barStatus = barStatus++;
                                         break;
                                     case R.id.answer_two:
                                         mScore.setScore(2);
-                                        barStatus = barStatus++;
                                         break;
                                     case R.id.answer_three:
                                         mScore.setScore(3);
-                                        barStatus = barStatus++;
                                         break;
                                     case R.id.answer_four:
                                         mScore.setScore(4);
-                                        barStatus = barStatus++;
                                         break;
                                     case R.id.answer_five:
                                         mScore.setScore(5);
-                                        barStatus = barStatus++;
                                         break;
 
                                 }
@@ -201,6 +198,8 @@ public class MainQuizActivity extends AppCompatActivity {
                         //  if(allQuestions.getAnswer().trim().equals(userSelectedAnswer.trim())){ //wont need a lot of this
                         //set new score
                         //      mScore.setScore(1); //radiobutton 1 with be worth 1, radiobutton 2 will be worth 2 and so on
+                        barStatus= barStatus - 1;
+                        progressBar.setProgress(barStatus);
 
                         int id=radioGroup.getCheckedRadioButtonId();
                         switch(id){
