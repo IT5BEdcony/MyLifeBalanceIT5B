@@ -163,7 +163,7 @@
             android:layout_below="@+id/linearLayout"
             android:layout_marginTop="21dp">
 
-            <Button
+            <ImageButton
                 android:id="@+id/facebook"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -171,14 +171,10 @@
                 android:layout_marginTop="24dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_selector"
-                android:letterSpacing="0.1"
-                android:padding="8dp"
-                android:text="facebook"
-                android:textAllCaps="false"
                 android:textColor="@color/pink"
-                android:textSize="@dimen/_16sdp" />
+                android:src="@drawable/facebook"/>
 
-            <Button
+            <ImageButton
                 android:id="@+id/twitter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -186,14 +182,10 @@
                 android:layout_marginTop="24dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_selector"
-                android:letterSpacing="0.1"
-                android:padding="8dp"
-                android:text="twitter"
-                android:textAllCaps="false"
                 android:textColor="@color/pink"
-                android:textSize="@dimen/_16sdp" />
+                android:src="@drawable/twitter"/>
 
-            <Button
+            <ImageButton
                 android:id="@+id/linkedin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -201,12 +193,8 @@
                 android:layout_marginTop="24dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_selector"
-                android:letterSpacing="0.1"
-                android:padding="8dp"
-                android:text="Linkedin"
-                android:textAllCaps="false"
                 android:textColor="@color/pink"
-                android:textSize="@dimen/_16sdp" />
+                android:src="@drawable/linkedin"/>
 
 
         </LinearLayout>

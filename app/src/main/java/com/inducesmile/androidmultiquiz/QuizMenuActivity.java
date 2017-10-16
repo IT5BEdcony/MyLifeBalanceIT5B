@@ -11,6 +11,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.text.Html;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -141,7 +142,7 @@ public class QuizMenuActivity extends AppCompatActivity {
             }
         });
 
-        Button btnTwitter = (Button) findViewById(R.id.twitter);
+        ImageButton btnTwitter = (ImageButton) findViewById(R.id.twitter);
         btnTwitter.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Uri webpage = Uri.parse("https://www.twitter.com/");
@@ -152,7 +153,7 @@ public class QuizMenuActivity extends AppCompatActivity {
             }
         });
 
-        Button btnFacebook = (Button) findViewById(R.id.facebook);
+        ImageButton btnFacebook = (ImageButton) findViewById(R.id.facebook);
         btnFacebook.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Uri webpage = Uri.parse("https://www.facebook.com/");
@@ -163,7 +164,7 @@ public class QuizMenuActivity extends AppCompatActivity {
             }
         });
 
-        Button btnLinkedin = (Button) findViewById(R.id.linkedin);
+        ImageButton btnLinkedin = (ImageButton) findViewById(R.id.linkedin);
         btnLinkedin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Uri webpage = Uri.parse("https://www.linkedin.com/");
