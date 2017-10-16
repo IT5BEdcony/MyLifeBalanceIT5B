@@ -18,6 +18,7 @@ import com.inducesmile.androidmultiquiz.entities.Client;
 
 import org.w3c.dom.Text;
 
+import static android.R.attr.id;
 import static com.inducesmile.androidmultiquiz.R.string.register;
 
 public class QuizResultActivity extends AppCompatActivity {
@@ -64,8 +65,9 @@ public class QuizResultActivity extends AppCompatActivity {
         }
         String StringScore = Double.toString(passResult);
        // client.setScore(StringScore);
-        client = new Client("name", "email", StringScore);
-        dbh.addClient(client);
+        ContentValues cv = new ContentValues();
+        cv.put("Score",StringScore); //These Fields should be your String values of actual column names
+       //DBHandler.COLUMN_CLIENT_SCORE(StringScore);
 
         Button quiz_home = (Button)findViewById(R.id.go_home);
         assert quiz_home != null;

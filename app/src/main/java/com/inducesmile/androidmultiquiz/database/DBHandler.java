@@ -24,11 +24,13 @@ public class DBHandler extends SQLiteOpenHelper {
     public static final String COLUMN_CLIENT_ID = "client_id";
     public static final String COLUMN_CLIENT_NAME = "client_name";
     public static final String COLUMN_CLIENT_EMAIL = "client_email";
+    public static final String COLUMN_CLIENT_SCORE = "client_score";
 
     private String CREATE_CLIENT_TABLE = "CREATE TABLE " + TABLE_CLIENTS + "("
             + COLUMN_CLIENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + COLUMN_CLIENT_NAME + " TEXT,"
-            + COLUMN_CLIENT_EMAIL + " TEXT" + ")";
+            + COLUMN_CLIENT_EMAIL + " TEXT,"
+            + COLUMN_CLIENT_SCORE + " TEXT" + ")";
 
 
     public DBHandler(Context context) {
@@ -52,6 +54,7 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(COLUMN_CLIENT_NAME, client.getName());
         //Assign email to object taken from passed Client object
         values.put(COLUMN_CLIENT_EMAIL, client.getEmail());
+        values.put(COLUMN_CLIENT_SCORE, client.getScore());
         //Create DB object and assign current object to it
         SQLiteDatabase db = this.getWritableDatabase();
         db.insert(TABLE_CLIENTS, null, values);
@@ -63,7 +66,8 @@ public class DBHandler extends SQLiteOpenHelper {
         String[] columns = {
                 COLUMN_CLIENT_ID,
                 COLUMN_CLIENT_NAME,
-                COLUMN_CLIENT_EMAIL
+                COLUMN_CLIENT_EMAIL,
+                COLUMN_CLIENT_SCORE
         };
         // sorting orders
     //    String sortOrder =
@@ -94,6 +98,7 @@ public class DBHandler extends SQLiteOpenHelper {
                 client.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_CLIENT_ID))));
                 client.setName(cursor.getString(cursor.getColumnIndex(COLUMN_CLIENT_NAME)));
                 client.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_CLIENT_EMAIL)));
+                client.setScore(cursor.getString(cursor.getColumnIndex(COLUMN_CLIENT_SCORE)));
     //            client.setPassword(cursor.getString(cursor.getColumnIndex(COLUMN_USER_PASSWORD)));
                 // Adding user record to list
                 clientList.add(client);
