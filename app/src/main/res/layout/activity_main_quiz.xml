@@ -14,8 +14,10 @@
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:max="6"
+        android:progress="6"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
 
     <TextView
