@@ -25,6 +25,8 @@ import com.inducesmile.androidmultiquiz.helper.MySharedPreference;
 
 import java.util.List;
 
+import static com.inducesmile.androidmultiquiz.R.id.imageView;
+
 public class MainQuizActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -46,6 +48,10 @@ public class MainQuizActivity extends AppCompatActivity {
     private ScoreObject mScore;
 
     private Button nextQuestionButton;
+
+    private Button prevQuestionButton;
+
+    private int progressBar;
 
 
 
@@ -82,12 +88,16 @@ public class MainQuizActivity extends AppCompatActivity {
 
         nextQuestionButton = (Button)findViewById(R.id.next_quiz);
 
+        prevQuestionButton = (Button)findViewById(R.id.prev_quiz);
+
 
 
         if(quizObject.size() > 0){
             totalQuizCount = quizObject.size();
             allQuestions = quizObject.get(questionCount);
             displayQuizQuestions();
+
+
 
             assert nextQuestionButton != null;
             nextQuestionButton.setOnClickListener(new View.OnClickListener() {
@@ -162,7 +172,78 @@ public class MainQuizActivity extends AppCompatActivity {
                 }
             });
 
+            prevQuestionButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int radioButtonId = radioGroup.getCheckedRadioButtonId();
+                    String userSelectedAnswer = selectedAnswerOption(radioButtonId);
 
+                    if (questionCount<=0){
+                        Toast.makeText(MainQuizActivity.this, "There is now Prev question " , Toast.LENGTH_LONG).show();
+                    }else{
+                        //check for the correct answer
+                        //  Log.d(TAG, "Match answers " + allQuestions.getAnswer() + " select " + userSelectedAnswer);
+                        //  if(allQuestions.getAnswer().trim().equals(userSelectedAnswer.trim())){ //wont need a lot of this
+                        //set new score
+                        //      mScore.setScore(1); //radiobutton 1 with be worth 1, radiobutton 2 will be worth 2 and so on
+
+                        int id=radioGroup.getCheckedRadioButtonId();
+                        switch(id){
+                            case R.id.answer_one:
+                                mScore.setScore(1);
+                                break;
+                            case R.id.answer_two:
+                                mScore.setScore(2);
+                                break;
+                            case R.id.answer_three:
+                                mScore.setScore(3);
+                                break;
+                            case R.id.answer_four:
+                                mScore.setScore(4);
+                                break;
+                            case R.id.answer_five:
+                                mScore.setScore(5);
+                                break;
+
+                        }
+                        //set the result
+                        mScore.addNewQuizResult(new ResultObject(""+allQuestions.getId(), allQuestions.getQuestion(), userSelectedAnswer));
+
+
+                        Log.d(TAG, "Quiz Result " + mScore.getQuizResultObject().size());
+                        questionCount--;
+
+                        // check if there is more question
+                        if(questionCount >= totalQuizCount){
+                            // Quiz over
+                            Intent quizOverIntent = new Intent(MainQuizActivity.this, QuizResultActivity.class);
+
+                            GsonBuilder builder = new GsonBuilder();
+                            Gson gson = builder.create();
+                            final String scoreString = gson.toJson(mScore);
+                            quizOverIntent.putExtra("RESULT_OBJECT", scoreString);
+
+                            double percentageScore = ((mScore.getScore() * 25) / totalQuizCount) - 25 ;
+                            quizOverIntent.putExtra("TOTAL_SCORE", String.valueOf(percentageScore));
+
+                            // compare score and save
+                            MySharedPreference sharedPreference = new MySharedPreference(MainQuizActivity.this);
+                            Double mDouble = new Double(percentageScore);
+                            int presentScore = mDouble.intValue();
+                            if(!sharedPreference.isHighestScore(presentScore)){
+                                sharedPreference.saveQuizHighestQuizScore(presentScore);
+                            }
+
+                            startActivity(quizOverIntent);
+
+                        }else{
+                            // display new questions
+                            allQuestions = quizObject.get(questionCount);
+                            displayQuizQuestions();
+                        }
+                    }
+                }
+            });
 
         }else{
             optionOne.setVisibility(View.GONE);
@@ -175,7 +256,10 @@ public class MainQuizActivity extends AppCompatActivity {
         }
     }
 
-    private void displayQuizQuestions(){
+
+
+
+private void displayQuizQuestions(){
         if(allQuestions != null){
             radioGroup.clearCheck();  //I changed this line from a method that removed the highlight to one that cleared the radiogroup
             int currentQuestion = questionCount + 1;
@@ -214,6 +298,7 @@ public class MainQuizActivity extends AppCompatActivity {
         }
         return textContent;
     }
+
 
 
 }

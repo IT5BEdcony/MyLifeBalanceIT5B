@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MyLifeBalance.iml" filepath="$PROJECT_DIR$/MyLifeBalance.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyLifeBalanceIT5B.iml" filepath="$PROJECT_DIR$/MyLifeBalanceIT5B.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
