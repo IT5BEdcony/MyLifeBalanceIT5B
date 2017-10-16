@@ -56,7 +56,7 @@ public class MainQuizActivity extends AppCompatActivity {
 
     private ProgressBar progressBar;
 
-    private int barStatus = 0;
+    private int barStatus = 1;
 
 
 
@@ -124,7 +124,7 @@ public class MainQuizActivity extends AppCompatActivity {
                             //set new score
                       //      mScore.setScore(1); //radiobutton 1 with be worth 1, radiobutton 2 will be worth 2 and so on
                         progressBar.setProgress(barStatus);
-                                barStatus= barStatus + 1;
+                                barStatus= barStatus ++;
                         int id=radioGroup.getCheckedRadioButtonId();
                                 switch(id){
                                     case R.id.answer_one:
@@ -192,7 +192,8 @@ public class MainQuizActivity extends AppCompatActivity {
 
                     if (questionCount<=0){
                         Toast.makeText(MainQuizActivity.this, "There is no prev question!" , Toast.LENGTH_LONG).show();
-                    }else{
+                    }
+                    else{
                         //check for the correct answer
                         //  Log.d(TAG, "Match answers " + allQuestions.getAnswer() + " select " + userSelectedAnswer);
                         //  if(allQuestions.getAnswer().trim().equals(userSelectedAnswer.trim())){ //wont need a lot of this
