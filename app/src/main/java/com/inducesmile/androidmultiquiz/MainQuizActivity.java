@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -24,7 +25,9 @@ import com.inducesmile.androidmultiquiz.entities.ScoreObject;
 import com.inducesmile.androidmultiquiz.helper.MySharedPreference;
 
 import java.util.List;
+import java.util.logging.Handler;
 
+import static android.R.attr.handle;
 import static com.inducesmile.androidmultiquiz.R.id.imageView;
 
 public class MainQuizActivity extends AppCompatActivity {
@@ -51,7 +54,11 @@ public class MainQuizActivity extends AppCompatActivity {
 
     private Button prevQuestionButton;
 
-    private int progressBar;
+    private ProgressBar progressBar;
+
+    private int barStatus = 0;
+
+
 
 
 
@@ -90,6 +97,8 @@ public class MainQuizActivity extends AppCompatActivity {
 
         prevQuestionButton = (Button)findViewById(R.id.prev_quiz);
 
+        progressBar = (ProgressBar)findViewById(R.id.progressBar);
+
 
 
         if(quizObject.size() > 0){
@@ -97,8 +106,7 @@ public class MainQuizActivity extends AppCompatActivity {
             allQuestions = quizObject.get(questionCount);
             displayQuizQuestions();
 
-
-
+            //Next button
             assert nextQuestionButton != null;
             nextQuestionButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -108,7 +116,8 @@ public class MainQuizActivity extends AppCompatActivity {
 
                     if(userSelectedAnswer.equals("")){
                         Toast.makeText(MainQuizActivity.this, "You must select an answer " + userSelectedAnswer, Toast.LENGTH_LONG).show();
-                    }else{
+                    }
+                    else{
                         //check for the correct answer
                       //  Log.d(TAG, "Match answers " + allQuestions.getAnswer() + " select " + userSelectedAnswer);
                       //  if(allQuestions.getAnswer().trim().equals(userSelectedAnswer.trim())){ //wont need a lot of this
@@ -118,18 +127,23 @@ public class MainQuizActivity extends AppCompatActivity {
                                 switch(id){
                                     case R.id.answer_one:
                                         mScore.setScore(1);
+                                        barStatus = barStatus++;
                                         break;
                                     case R.id.answer_two:
                                         mScore.setScore(2);
+                                        barStatus = barStatus++;
                                         break;
                                     case R.id.answer_three:
                                         mScore.setScore(3);
+                                        barStatus = barStatus++;
                                         break;
                                     case R.id.answer_four:
                                         mScore.setScore(4);
+                                        barStatus = barStatus++;
                                         break;
                                     case R.id.answer_five:
                                         mScore.setScore(5);
+                                        barStatus = barStatus++;
                                         break;
 
                                 }
@@ -139,6 +153,7 @@ public class MainQuizActivity extends AppCompatActivity {
 
                         Log.d(TAG, "Quiz Result " + mScore.getQuizResultObject().size());
                         questionCount++;
+                        barStatus++;
 
                         // check if there is more question
                         if(questionCount >= totalQuizCount){
@@ -171,7 +186,7 @@ public class MainQuizActivity extends AppCompatActivity {
                     }
                 }
             });
-
+            //Prev Button
             prevQuestionButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -179,7 +194,7 @@ public class MainQuizActivity extends AppCompatActivity {
                     String userSelectedAnswer = selectedAnswerOption(radioButtonId);
 
                     if (questionCount<=0){
-                        Toast.makeText(MainQuizActivity.this, "There is now Prev question " , Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainQuizActivity.this, "There is no prev question!" , Toast.LENGTH_LONG).show();
                     }else{
                         //check for the correct answer
                         //  Log.d(TAG, "Match answers " + allQuestions.getAnswer() + " select " + userSelectedAnswer);
@@ -212,6 +227,7 @@ public class MainQuizActivity extends AppCompatActivity {
 
                         Log.d(TAG, "Quiz Result " + mScore.getQuizResultObject().size());
                         questionCount--;
+
 
                         // check if there is more question
                         if(questionCount >= totalQuizCount){
