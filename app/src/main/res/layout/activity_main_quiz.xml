@@ -120,10 +120,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="27dp"
             android:layout_marginLeft="8dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/next_quiz"
-            android:layout_marginRight="8dp"
-            app:layout_constraintHorizontal_bias="0.0" />
+            app:layout_constraintLeft_toLeftOf="parent" />
 
         <Button
             android:id="@+id/next_quiz"
@@ -140,7 +137,10 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="27dp"
             android:layout_marginRight="31dp"
-            app:layout_constraintRight_toRightOf="parent" />
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/prev_quiz"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintHorizontal_bias="1.0" />
 
 
     </android.support.constraint.ConstraintLayout>
