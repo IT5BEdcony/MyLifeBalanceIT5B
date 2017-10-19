@@ -1,4 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">My Life Balance</string>
+    <string name="quiz_slogan" translatable="true">Verbessern Sie Ihr Leben</string>
+    <string name="select_quiz" translatable="true">Wähle ein Quiz</string>
+    <string name="quiz_instruction" translatable="true">Quiz-Anweisungen</string>
+    <string name="your_best_score" translatable="true">Ihr bestes Ergebnis</string>
+    <string name="quiz_user_score_table" translatable="true">QUIZ TOP SCORERS</string>
+    <string name="total_best_score" translatable="true">93%</string>
+    <string name="quiz_category" translatable="true">Quiz-Kategorien</string>
+    <string name="sports" translatable="true">Sport Kategorie</string>
+    <string name="question_title" translatable="true">Frage</string>
+    <string name="question" translatable="true">Was ist der höchste Berg der Welt im Moment?</string>
+    <string name="everest" translatable="true">Mount Everest</string>
+    <string name="next_button" translatable="true">Nächste Frage</string>
+    <string name="prev_button" translatable="true">VORFRAGE</string>
+    <string name="pass" translatable="true">BESTEHEN</string>
+    <string name="fail" translatable="true">FEHLSCHLAGEN</string>
+    <string name="quiz_result" translatable="true">Quiz Ergebnis</string>
+    <string name="retake_quiz" translatable="true">Quiz Startseite</string>
+    <string name="view_result" translatable="true">Prüfe die Antwort</string>
+    <string name="question_num" translatable="true">Frage 12</string>
+    <string name="your_answer" translatable="true">Deine Antwort</string>
+    <string name="correct_answer" translatable="true">Korrekte Antwort</string>
+    <string name="quiz_result_analysis" translatable="true">Quizergebnisanalyse</string>
+    <string name="no_quiz_in_category" translatable="true">Es gibt kein Quiz in dieser Kategorie. Füge ein neues Quiz hinzu</string>
+    <string name="home_button" translatable="true">Quiz Startseite</string>
+    <string name="register" translatable="true">Neu registrieren</string>
+    <string name="sign_in" translatable="true">Anmelden</string>
+    <string name="email" translatable="true">Email</string>
+    <string name="email_hint" translatable="true">some@one.com</string>
+    <string name="password" translatable="true">Passwort</string>
+    <string name="title_activity_login" translatable="true">Anmelden</string>
+
+    <string name="less_than_25" translatable="true">Das Leben verursacht immensen Schmerz. Du fühlst dich meistens verwirrt. Du hast wenige Freunde und die Leute
+         Sie assoziieren, teilen wahrscheinlich die gleichen Ansichten der Welt wie Sie. Ihr Fokus liegt hauptsächlich darin, was Sie nicht kontrollieren können oder
+         Einfluss und damit fühlen Sie sich ständig überwältigt und außer Kontrolle geraten. Du siehst das Leben als eine Enttäuschung bis jetzt
+         und du erlaubst den Kräften außerhalb von dir dich zu beherrschen. Das nennen wir Level 3 Leben.</string>
+    <string name="less_than_50" translatable="true">Sie finden das Leben oft verwirrend. Du fühlst dich außer Kontrolle und fragst dich, warum ich? "Die Welt ist beängstigend
+         zu Ihnen und Sie höchstwahrscheinlich andere für Ihre schlechten Ergebnisse verantwortlich machen. Sie neigen dazu, keine Risiken einzugehen und in Ihrer Komfortzone zu bleiben.
+         Veränderung ist schwierig für dich, du möchtest dein Leben auf Stufe 2 leben und mehr Kontrolle haben, aber du tendierst dazu, in der
+         Level 3 Zone und das frustriert dich.</string>
+    <string name="less_than_75" translatable="true">Sie haben gemischte Ergebnisse in Ihrem Leben und fragen sich, ob es Glück ist. Du fragst dich manchmal, was du tust
+         falsch und wie Sie die Dinge umkehren können. Sie können von Menschen und Ereignissen in der Welt enttäuscht sein. Du bist bereit zu nehmen
+         einige Risiken zu ändern, solange Sie die Vorteile sehen können. Sie arbeiten auf Stufe 2, aber wenn die Dinge verwirrend oder frustrierend werden
+         Sie schweifen zu Stufe 3.</string>
+    <string name="less_than_100" translatable="true">Du glaubst, dass deine Realität bei dir liegt. Du hältst dich für deine Welt verantwortlich.
+         Sie sind bereit, neue Wege zu lernen und Herausforderungen als Lernmöglichkeiten zu betrachten. Du genießt das Leben und was es präsentiert.
+         Du nimmst dich leicht, du lebst die meiste Zeit auf Level 1 und du bist dir bewusst, wann du es nicht willst.</string>
+
+    <string name="prompt_email" translatable="true">Email</string>
+    <string name="prompt_password" translatable="true">Passwort</string>
+    <string name="action_sign_in" translatable="true">Einloggen oder Registrieren</string>
+    <string name="action_sign_in_short" translatable="true">Anmelden</string>
+    <string name="error_invalid_email" translatable="true">Diese E-Mail-Adresse ist ungültig</string>
+    <string name="error_invalid_password" translatable="true">Dieses Passwort ist zu kurz</string>
+    <string name="error_incorrect_password" translatable="true">Dieses Passwort ist falsch</string>
+    <string name="error_field_required" translatable="true">Dieses Feld wird benötigt</string>
+    <string name="permission_rationale" translatable="true">"Kontaktberechtigungen werden für die Bereitstellung von E-Mail benötigt.
+         Fertigstellungen."</string>
+
+    <string name="cont_guest" translatable="true">Als Gast fortfahren</string>
+    <string name="prompt_name" translatable="true">Vollständiger Name</string>
+    <string name="welcome" translatable="true">Herzlich willkommen!</string>
+    <string name="name_hint" translatable="true">Vollständiger Name</string>
+    <string name="website" translatable="true">Besuche die Website</string>
+    <string name="view_users" translatable="true">Benutzer anzeigen</string>
+    <string name="logout" translatable="true">Ausloggen</string>
+    <string name="hint_password" translatable="true">Passwort</string>
+    <string name="hint_email" translatable="true">Email</string>
+    <string name="hint_name" translatable="true">Name</string>
 </resources>
